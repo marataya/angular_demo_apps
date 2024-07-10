@@ -4,8 +4,6 @@ import { TodoItem } from './todoItem';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

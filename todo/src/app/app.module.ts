@@ -15,6 +15,7 @@ import { MatCheckboxModule  } from '@angular/material/checkbox';
 import { MatFormFieldModule   } from '@angular/material/form-field';
 import { MatInputModule   } from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatTableModule, MatCheckboxModule, MatFormFieldModule, MatInputModule,
     MatSlideToggleModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
