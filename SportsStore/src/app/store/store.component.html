@@ -17,7 +17,7 @@
         </div>
         <div class="col-9 p-2 text-dark">
             <div class="card m-1 p-1 bg-light">
-                @for(product of products(); track product.id) {
+                @for(product of pagedProducts(); track product.id) {
                 <h4>
                     {{product.name}}
                     <span class="badge rounded-pill bg-primary" style="float:right">
@@ -28,6 +28,21 @@
                     {{product.description}}
                 </div>
                 }
+            </div>
+            <div class="form-inline float-start mr-5">
+                <select class="form-control" [value]="productsPerPage()"
+                    (change)="changePageSize($any($event).target.value)">
+                    <option value="3">3 per Page</option>
+                    <option value="4">4 per Page</option>
+                    <option value="6">6 per Page</option>
+                    <option value="8">8 per Page</option>
+                </select>
+            </div>
+            <div class="btn-group" *ngFor="let page of pageNumbers()" style="left:15px">
+                <button class="btn btn-outline-primary" (click)="changePage(page)"
+                    [class.active]="page == selectedPage()">
+                    {{page}}
+                </button>
             </div>
         </div>
 
